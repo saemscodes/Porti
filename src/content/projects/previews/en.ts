@@ -1,6 +1,6 @@
-import thumbnailCeka from "../../../assets/thumbnails/ceka.webp";
+import thumbnailCeka from "../../../assets/thumbnails/ceka.png";
 import thumbnailNod from "../../../assets/thumbnails/nod.webp";
-import thumbnailSaemstunes from "../../../assets/thumbnails/saemstunes.webp";
+import thumbnailSaemstunes from "../../../assets/thumbnails/saemstunes.png";
 import thumbnailNasaka from "../../../assets/thumbnails/nasaka.png";
 import thumbnailReport from "../../../assets/thumbnails/report.png";
 
