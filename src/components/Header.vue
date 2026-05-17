@@ -142,8 +142,8 @@ const getInTouchClassNames = computed(() => {
     pointer-events: auto;
 
     // Glassmorphism/Skeuomorphism
-    background: rgba(255, 255, 255, 0.7) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     box-shadow: 

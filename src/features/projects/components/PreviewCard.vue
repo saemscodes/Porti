@@ -165,7 +165,7 @@ onUnmounted(() => {
     position: absolute;
     bottom: -1px;
     right: -1px;
-    background-color: var(--color-beige-400); // REVERT: Restore light background so buttons stay legible
+    background-color: transparent !important; // REMOVE SQUARE: Make transparent to remove the box
     padding-left: 6px;
     padding-top: 6px;
     border-radius: 32px 0 0 0;
@@ -175,9 +175,9 @@ onUnmounted(() => {
   }
 
   &-button {
-    background: rgba(255, 255, 255, 0.7) !important; // More opaque white glass for light surfaces
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    background: rgba(255, 255, 255, 0.95) !important; // HIGH OPACITY: Ensure it stays bright even on dark images without needing a square background
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     box-shadow: 
       0 4px 12px rgba(0, 0, 0, 0.08),
