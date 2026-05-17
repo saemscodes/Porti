@@ -26,5 +26,4 @@ export interface ProjectPreview {
   slug: string;
   thumbnail: string;
   description: string;
-  isDark?: boolean;
 }

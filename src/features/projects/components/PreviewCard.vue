@@ -65,7 +65,6 @@ onUnmounted(() => {
         <div class="preview-card-edge">
           <ButtonRound 
             class="preview-card-button" 
-            :class="props.preview.isDark ? 'is-dark' : 'is-light'"
             variant="accent" 
             renderAs="div"
           >
@@ -192,19 +191,11 @@ onUnmounted(() => {
     &.is-dark {
       background: rgba(255, 120, 0, 0.4) !important;
       border-color: rgba(255, 255, 255, 0.1) !important;
-      .preview-card-button-arrow {
-        color: rgba(255, 255, 255, 0.95) !important;
-        --icon-color: rgba(255, 255, 255, 0.95) !important;
-      }
     }
 
     &.is-light {
       background: rgba(255, 160, 0, 0.6) !important;
       border-color: rgba(0, 0, 0, 0.05) !important;
-      .preview-card-button-arrow {
-        color: rgba(0, 0, 0, 0.8) !important;
-        --icon-color: rgba(0, 0, 0, 0.8) !important;
-      }
     }
 
     @include mixins.hover {
@@ -221,6 +212,10 @@ onUnmounted(() => {
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
+      mix-blend-mode: difference; // Automatic contrast based on background
+      filter: invert(1) grayscale(1) contrast(9); // Ensures the result is sharply black or white
+      color: white !important;
+      --icon-color: white !important;
     }
   }
 
