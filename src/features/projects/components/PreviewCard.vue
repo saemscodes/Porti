@@ -3,7 +3,7 @@ import Link from "../../../components/Link.vue";
 import Notch from "../../../components/Notch.vue";
 import ArrowRightLong from "../../../components/icons/ArrowRightLong.vue";
 import gsap from "gsap";
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref, computed } from "vue";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ButtonRound from "../../../components/ButtonRound.vue";
 import { t } from "../../../i18n/utils/translate";
@@ -43,6 +43,10 @@ onUnmounted(() => {
     tlRef.value = null;
   }
 });
+
+const isDarkProject = computed(() => {
+  return props.preview?.slug === "nod" || props.preview?.slug === "saemstunes";
+});
 </script>
 
 <template>
@@ -67,6 +71,7 @@ onUnmounted(() => {
             class="preview-card-button" 
             variant="accent" 
             renderAs="div"
+            :class="{ 'is-dark-project': isDarkProject }"
           >
             <ArrowRightLong class="preview-card-button-arrow" />
           </ButtonRound>
@@ -169,7 +174,7 @@ onUnmounted(() => {
     position: absolute;
     bottom: -1px;
     right: -1px;
-    background-color: var(--color-beige-400);
+    background-color: transparent !important;
     padding-left: 6px;
     padding-top: 6px;
     border-radius: 32px 0 0 0;
@@ -178,44 +183,64 @@ onUnmounted(() => {
   }
 
   &-button {
-    background: rgba(255, 140, 0, 0.5) !important;
-    backdrop-filter: blur(12px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: 
       0 4px 12px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    color: rgba(0, 0, 0, 0.8) !important; // Dark arrow on light project
 
-    &.is-dark {
-      background: rgba(255, 120, 0, 0.4) !important;
-      border-color: rgba(255, 255, 255, 0.1) !important;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.05) 0%, 
+        rgba(0, 0, 0, 0) 100%
+      );
+      pointer-events: none;
+      border-radius: 50%;
     }
 
-    &.is-light {
-      background: rgba(255, 160, 0, 0.6) !important;
-      border-color: rgba(0, 0, 0, 0.05) !important;
+    &.is-dark-project {
+      background: rgba(0, 0, 0, 0.1) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: rgba(255, 255, 255, 0.9) !important; // Light arrow on dark project
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
+
+      &::before {
+        background: linear-gradient(
+          180deg, 
+          rgba(255, 255, 255, 0.05) 0%, 
+          rgba(255, 255, 255, 0) 100%
+        );
+      }
     }
 
     @include mixins.hover {
       &:hover {
-        background: rgba(255, 140, 0, 0.7) !important;
         transform: scale(1.1) !important;
-        box-shadow: 
-          0 8px 24px rgba(0, 0, 0, 0.15),
-          inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        background: rgba(255, 255, 255, 0.1) !important;
       }
     }
 
     &-arrow {
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
-      mix-blend-mode: difference; // Automatic contrast based on background
-      filter: invert(1) grayscale(1) contrast(9); // Ensures the result is sharply black or white
-      color: white !important;
-      --icon-color: white !important;
+      color: inherit;
+      --icon-color: currentColor;
     }
   }
 
