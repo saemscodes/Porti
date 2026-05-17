@@ -3,7 +3,7 @@ import Link from "../../../components/Link.vue";
 import Notch from "../../../components/Notch.vue";
 import ArrowRightLong from "../../../components/icons/ArrowRightLong.vue";
 import gsap from "gsap";
-import { onMounted, onUnmounted, ref, computed } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ButtonRound from "../../../components/ButtonRound.vue";
 import { t } from "../../../i18n/utils/translate";
@@ -43,10 +43,6 @@ onUnmounted(() => {
     tlRef.value = null;
   }
 });
-
-const isDarkProject = computed(() => {
-  return props.preview?.slug === "nod" || props.preview?.slug === "saemstunes";
-});
 </script>
 
 <template>
@@ -67,12 +63,7 @@ const isDarkProject = computed(() => {
       </div>
       <div class="preview-card-overlay">
         <div class="preview-card-edge">
-          <ButtonRound 
-            class="preview-card-button" 
-            variant="accent" 
-            renderAs="div"
-            :class="{ 'is-dark-project': isDarkProject }"
-          >
+          <ButtonRound class="preview-card-button" variant="accent" renderAs="div">
             <ArrowRightLong class="preview-card-button-arrow" />
           </ButtonRound>
         </div>
@@ -174,25 +165,28 @@ const isDarkProject = computed(() => {
     position: absolute;
     bottom: -1px;
     right: -1px;
-    background-color: transparent !important;
+    background-color: transparent; // Make edge transparent for glass look
     padding-left: 6px;
     padding-top: 6px;
     border-radius: 32px 0 0 0;
     padding-right: 1px;
     padding-bottom: 1px;
+    z-index: 10;
   }
 
   &-button {
     background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(16px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
     box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+      0 4px 12px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    color: rgba(0, 0, 0, 0.8) !important; // Dark arrow as requested
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    color: rgba(0, 0, 0, 0.8) !important; // Dark arrow on light project
+    position: relative;
+    overflow: hidden;
 
     &::before {
       content: '';
@@ -203,43 +197,35 @@ const isDarkProject = computed(() => {
       bottom: 0;
       background: linear-gradient(
         180deg, 
-        rgba(0, 0, 0, 0.05) 0%, 
-        rgba(0, 0, 0, 0) 100%
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 255, 255, 0) 100%
       );
       pointer-events: none;
-      border-radius: 50%;
-    }
-
-    &.is-dark-project {
-      background: rgba(0, 0, 0, 0.1) !important;
-      border-color: rgba(255, 255, 255, 0.08) !important;
-      color: rgba(255, 255, 255, 0.9) !important; // Light arrow on dark project
-      box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.4) !important;
-
-      &::before {
-        background: linear-gradient(
-          180deg, 
-          rgba(255, 255, 255, 0.05) 0%, 
-          rgba(255, 255, 255, 0) 100%
-        );
-      }
     }
 
     @include mixins.hover {
       &:hover {
-        transform: scale(1.1) !important;
-        background: rgba(255, 255, 255, 0.1) !important;
+        background: rgba(0, 0, 0, 0.03) !important;
+        border-color: rgba(0, 0, 0, 0.15) !important;
+        transform: translateY(-2px) scale(1.05) !important;
+        box-shadow: 
+          0 8px 24px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+        color: #000 !important;
+      }
+
+      &:active {
+        transform: translateY(0) scale(0.95) !important;
+        box-shadow: 
+          0 2px 8px rgba(0, 0, 0, 0.05),
+          inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
       }
     }
 
     &-arrow {
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
-      color: inherit;
       --icon-color: currentColor;
     }
   }
