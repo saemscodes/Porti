@@ -116,16 +116,18 @@ const SERVICES_EN = [
   { name: "Paystack & M-Pesa" },
 ] as const satisfies { name: string }[];
 
-const SERVICES_DE = [
-  { name: "React & TypeScript" },
-  { name: "Supabase & Postgres" },
+const SERVICES_SW = [
+  { name: "React, TypeScript, Tailwind CSS" },
+  { name: "Firebase integration, SQL, PostgreSQL" },
+  { name: "GitHub, Git, CLI workflows"},
   { name: "Cloudflare & CDN" },
-  { name: "Capacitor & Android" },
+  { name: "Debugging, build troubleshooting"},
+  { name: "Android Studio, Kotlin, Gradle" },
   { name: "Paystack & M-Pesa" },
 ] as const satisfies { name: string }[];
 
 const services = computed(() => {
-  return locale.value === "en" ? SERVICES_EN : SERVICES_DE;
+  return locale.value === "en" ? SERVICES_EN : SERVICES_SW;
 });
 </script>
 
