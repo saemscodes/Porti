@@ -1,9 +1,10 @@
-import nod0 from "../../../assets/images/projects/nod/nod-0.webp";
-import nod1 from "../../../assets/images/projects/nod/nod-1.webp";
-import nod2 from "../../../assets/images/projects/nod/nod-2.webp";
-import nod3 from "../../../assets/images/projects/nod/nod-3.webp";
-import nod4 from "../../../assets/images/projects/nod/nod-4.webp";
-import nod5 from "../../../assets/images/projects/nod/nod-5.webp";
+import nod1 from "../../../assets/images/projects/nod/nod-new-1.png";
+import nod2 from "../../../assets/images/projects/nod/nod-new-2.png";
+import nod3 from "../../../assets/images/projects/nod/nod-new-3.png";
+import nod4 from "../../../assets/images/projects/nod/nod-new-4.png";
+import nod5 from "../../../assets/images/projects/nod/nod-new-5.png";
+import nod6 from "../../../assets/images/projects/nod/nod-new-6.png";
+import nod7 from "../../../assets/images/projects/nod/nod-new-7.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -20,18 +21,9 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: nod0,
-        alt: "NOD — Pata moyo wa hekima",
-        caption: "NOD — Pata moyo wa hekima",
-      },
-    },
-    {
-      type: "media",
-      props: {
-        type: "image",
         src: nod1,
-        alt: "NOD — Msaidizi wa Kiroho wa Kila Siku",
-        caption: "Msaidizi wa Kiroho wa Kila Siku",
+        alt: "NOD — Kiolesura cha Programu",
+        caption: "Kiolesura cha Programu",
       },
     },
     {
@@ -39,8 +31,8 @@ export default {
       props: {
         type: "image",
         src: nod2,
-        alt: "NOD — Ufuatiliaji wa Maombi na Mafunzo",
-        caption: "Ufuatiliaji wa Maombi na Mafunzo",
+        alt: "NOD — Kifuatiliaji cha Kiroho",
+        caption: "Kifuatiliaji cha Kiroho",
       },
     },
     {
@@ -48,8 +40,8 @@ export default {
       props: {
         type: "image",
         src: nod3,
-        alt: "NOD — Uhuishaji wa Moto wa Kipekee",
-        caption: "Uhuishaji wa Moto wa Kipekee",
+        alt: "NOD — Maktaba ya Rasilimali",
+        caption: "Maktaba ya Rasilimali",
       },
     },
     {
@@ -57,8 +49,8 @@ export default {
       props: {
         type: "image",
         src: nod4,
-        alt: "NOD — Mfumo wa Mikopo wa Kulipia",
-        caption: "Mfumo wa Mikopo wa Kulipia",
+        alt: "NOD — Tafakari za Kila Siku",
+        caption: "Tafakari za Kila Siku",
       },
     },
     {
@@ -66,8 +58,26 @@ export default {
       props: {
         type: "image",
         src: nod5,
-        alt: "NOD — Muundo wa Programu ya Simu",
-        caption: "Muundo wa Programu ya Simu",
+        alt: "NOD — Ushiriki wa Jamii",
+        caption: "Ushiriki wa Jamii",
+      },
+    },
+    {
+      type: "media",
+      props: {
+        type: "image",
+        src: nod6,
+        alt: "NOD — Vipimo vya Kukua",
+        caption: "Vipimo vya Kukua",
+      },
+    },
+    {
+      type: "media",
+      props: {
+        type: "image",
+        src: nod7,
+        alt: "NOD — Arifa za Mfumo",
+        caption: "Arifa za Mfumo",
       },
     },
   ],

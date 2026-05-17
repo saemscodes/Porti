@@ -123,37 +123,54 @@ onMounted(() => {
   &-links {
     position: relative;
     display: flex;
-    padding: 3px;
-    background-color: var(--color-beige-500);
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
-    color: var(--color-text-400);
-    transition:
-      color 0.1s ease-in-out,
-      background-color 0.1s ease-in-out;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
     &-dark {
-      background-color: var(--color-dark-blue-500);
-      color: var(--color-white-400);
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+      box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
   }
 
   &-bar {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    height: calc(100% - 6px);
+    top: 4px;
+    left: 4px;
+    height: calc(100% - 8px);
     width: 128px;
-    background: var(--color-orange-400);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 100px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.1),
+      inset 0 1px 2px rgba(255, 255, 255, 0.1);
     transition:
-      transform 0.3s var(--ease-smooth),
-      opacity 0.1s ease-in-out,
-      background-color 0.1s ease-in-out;
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.2s ease-in-out;
     z-index: 1;
     opacity: 0;
 
     &-dark {
-      background-color: var(--color-cyan-500);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     &-active {
@@ -164,19 +181,40 @@ onMounted(() => {
   &-link {
     position: relative;
     z-index: 2;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     font-weight: 700;
     border: none;
     background: none;
-    transition: color 0.1s ease-in-out;
-    font-size: var(--font-size-md);
+    transition: all 0.3s ease;
+    font-size: 13px;
     width: 128px;
+    height: 36px;
     white-space: nowrap;
     text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    opacity: 0.6;
 
     &-active {
-      color: var(--color-white-400);
+      opacity: 1;
+      color: #000;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    @include mixins.hover {
+      &:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
     }
   }
+}
+
+.header-home-links-dark .header-home-link-active {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 </style>

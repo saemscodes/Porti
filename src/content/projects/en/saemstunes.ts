@@ -1,11 +1,11 @@
-import saemstunes0 from "../../../assets/images/projects/saemstunes/saemstunes-0.webp";
-import saemstunes1 from "../../../assets/images/projects/saemstunes/saemstunes-1.webp";
-import saemstunes2 from "../../../assets/images/projects/saemstunes/saemstunes-2.webp";
-import saemstunes3 from "../../../assets/images/projects/saemstunes/saemstunes-3.webp";
-import saemstunes4 from "../../../assets/images/projects/saemstunes/saemstunes-4.webp";
-import saemstunes5 from "../../../assets/images/projects/saemstunes/saemstunes-5.webp";
-import saemstunes6 from "../../../assets/images/projects/saemstunes/saemstunes-6.webp";
-import saemstunes7 from "../../../assets/images/projects/saemstunes/saemstunes-7.webp";
+import st1 from "../../../assets/images/projects/saemstunes/st-new-1.png";
+import st2 from "../../../assets/images/projects/saemstunes/st-new-2.png";
+import st3 from "../../../assets/images/projects/saemstunes/st-new-3.png";
+import st4 from "../../../assets/images/projects/saemstunes/st-new-4.png";
+import st5 from "../../../assets/images/projects/saemstunes/st-new-5.png";
+import st6 from "../../../assets/images/projects/saemstunes/st-new-6.png";
+import st7 from "../../../assets/images/projects/saemstunes/st-new-7.png";
+import st8 from "../../../assets/images/projects/saemstunes/st-new-8.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -21,72 +21,72 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes0,
-        alt: "Saem's Tunes — Discover Your Musical Voice",
-        caption: "Saem's Tunes — Discover Your Musical Voice",
+        src: st1,
+        alt: "Saem's Tunes — Musical Discovery",
+        caption: "Musical Discovery Experience",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes1,
-        alt: "Saem's Tunes — Lesson Library",
-        caption: "Lesson Library",
+        src: st2,
+        alt: "Saem's Tunes — Learning Modules",
+        caption: "Interactive Learning Modules",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes2,
-        alt: "Saem's Tunes — Music Curriculum",
-        caption: "Music Curriculum",
+        src: st3,
+        alt: "Saem's Tunes — Skill Acquisition",
+        caption: "Skill Acquisition Tracks",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes3,
-        alt: "Saem's Tunes — Student Dashboard",
-        caption: "Student Dashboard",
+        src: st4,
+        alt: "Saem's Tunes — Performance Training",
+        caption: "Vocal and Performance Training",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes4,
-        alt: "Saem's Tunes — Community Features",
-        caption: "Community Features",
+        src: st5,
+        alt: "Saem's Tunes — Educational Content",
+        caption: "Curated Educational Content",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes5,
-        alt: "Saem's Tunes — Track Player",
-        caption: "Track Player",
+        src: st6,
+        alt: "Saem's Tunes — Student Progress",
+        caption: "Student Progress and Insights",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes6,
-        alt: "Saem's Tunes — Music Tools",
-        caption: "Music Tools",
+        src: st7,
+        alt: "Saem's Tunes — Creative Tools",
+        caption: "Creative Music Tools",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: saemstunes7,
-        alt: "Saem's Tunes — Profile & Settings",
-        caption: "Profile & Settings",
+        src: st8,
+        alt: "Saem's Tunes — Mobile Access",
+        caption: "Seamless Mobile Experience",
       },
     },
   ],
