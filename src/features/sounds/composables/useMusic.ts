@@ -7,12 +7,9 @@ import { sizes } from "../../../utils/sizes";
 import { howlerUnlocked, soundsEnabled } from "./useHowler";
 import { clamp } from "../../../utils/math";
 import { isFeatureEnabled } from "../../../utils/features";
-import { useAgent } from "../../../composables/useAgent";
-
 import type { MusicTrack } from "../types";
 
 export const useMusic = () => {
-  const { isTouch } = useAgent();
 
   const tickVolumes = () => {
     // If not on home route, always use base volume
