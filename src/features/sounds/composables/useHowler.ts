@@ -24,7 +24,11 @@ export const useHowler = () => {
   const handleUnlocked = () => {
     howlerUnlocked.value = true;
 
-    // Removed isTouch block to allow sounds on touch-enabled devices
+    // Disable sounds completely on touch devices
+    if (isTouch.value) {
+      soundsEnabled.value = false;
+      return;
+    }
 
     const storeItem = localStorage.getItem("portfolio-soundsEnabled");
     if (storeItem) {
@@ -39,7 +43,7 @@ export const useHowler = () => {
     if (!howlerUnlocked.value) {
       if (Howler.ctx.state !== "running") return;
       handleUnlocked();
-    } else {
+    } else if (!isTouch.value) {
       // Only process sounds on non-touch devices
       contactTick();
       roomTick();
@@ -64,7 +68,7 @@ export const useHowler = () => {
   };
 
   watch(soundsEnabled, (newVal) => {
-    if (!isFeatureEnabled("sounds")) return;
+    if (!isFeatureEnabled("sounds") || isTouch.value) return;
     enabledVolume.value = newVal ? 1 : 0;
     localStorage.setItem("portfolio-soundsEnabled", newVal.toString());
   });
@@ -90,7 +94,9 @@ export const useHowler = () => {
     window.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("keydown", handleKeyPress);
 
-    loadAllSounds();
+    if (!isTouch.value) {
+      loadAllSounds();
+    }
   });
 
   onUnmounted(() => {

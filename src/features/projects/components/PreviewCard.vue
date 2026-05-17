@@ -165,69 +165,19 @@ onUnmounted(() => {
     position: absolute;
     bottom: -1px;
     right: -1px;
-    background-color: transparent !important; // REMOVE SQUARE: Make transparent to remove the box
+    background-color: var(--color-beige-400);
     padding-left: 6px;
     padding-top: 6px;
     border-radius: 32px 0 0 0;
     padding-right: 1px;
     padding-bottom: 1px;
-    z-index: 10;
   }
 
   &-button {
-    background: rgba(255, 255, 255, 0.95) !important; // HIGH OPACITY: Ensure it stays bright even on dark images without needing a square background
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 1), // Stronger skeuomorphic highlight
-      inset 0 -1px 0 rgba(0, 0, 0, 0.05) !important;
-    color: #1a1a1a !important; // Solid dark arrow for perfect legibility
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        180deg, 
-        rgba(255, 255, 255, 0.8) 0%, 
-        rgba(255, 255, 255, 0) 100%
-      );
-      pointer-events: none;
-    }
-
-    @include mixins.hover {
-      &:hover {
-        background: #fff !important;
-        border-color: rgba(0, 0, 0, 0.2) !important;
-        transform: translateY(-2px) scale(1.05) !important;
-        box-shadow: 
-          0 8px 24px rgba(0, 0, 0, 0.12),
-          inset 0 1px 0 #fff !important;
-        color: #000 !important;
-      }
-
-      &:active {
-        transform: translateY(0) scale(0.95) !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        box-shadow: 
-          0 2px 8px rgba(0, 0, 0, 0.05),
-          inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
-      }
-    }
-
     &-arrow {
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.1s ease-in-out;
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
-      --icon-color: currentColor;
     }
   }
 
@@ -240,16 +190,12 @@ onUnmounted(() => {
       transition: transform 0.1s ease-in-out;
       transform: scale(calc(1 + var(--hover) * 0.02));
       aspect-ratio: 16/9;
-      border: 1px solid rgba(0, 0, 0, 0.05); // Subtle border for white previews (Nasaka fix)
     }
 
     &-wrapper {
       border-radius: var(--radius-lg);
       overflow: hidden;
       background-color: var(--color-beige-500);
-      box-shadow: 
-        0 4px 20px rgba(0, 0, 0, 0.05),
-        inset 0 0 0 1px rgba(0, 0, 0, 0.05); // Contain the white previews
     }
   }
 
