@@ -142,15 +142,15 @@ const getInTouchClassNames = computed(() => {
     pointer-events: auto;
 
     // Glassmorphism/Skeuomorphism
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(12px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
     box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
-    color: rgba(0, 0, 0, 0.8) !important; // Dark arrow as requested
+      0 4px 12px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05) !important;
+    color: #1a1a1a !important; 
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     overflow: hidden;
 
@@ -163,7 +163,7 @@ const getInTouchClassNames = computed(() => {
       bottom: 0;
       background: linear-gradient(
         180deg, 
-        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 255, 255, 0.8) 0%, 
         rgba(255, 255, 255, 0) 100%
       );
       pointer-events: none;
@@ -171,17 +171,18 @@ const getInTouchClassNames = computed(() => {
 
     @include mixins.hover {
       &:hover {
-        background: rgba(0, 0, 0, 0.03) !important;
-        border-color: rgba(0, 0, 0, 0.15) !important;
+        background: #fff !important;
+        border-color: rgba(0, 0, 0, 0.2) !important;
         transform: translateY(-2px) scale(1.05) !important;
         box-shadow: 
-          0 8px 24px rgba(0, 0, 0, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+          0 8px 24px rgba(0, 0, 0, 0.12),
+          inset 0 1px 0 #fff !important;
         color: #000 !important;
       }
 
       &:active {
         transform: translateY(0) scale(0.95) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
         box-shadow: 
           0 2px 8px rgba(0, 0, 0, 0.05),
           inset 0 1px 4px rgba(0, 0, 0, 0.1) !important;
