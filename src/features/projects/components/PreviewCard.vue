@@ -63,7 +63,12 @@ onUnmounted(() => {
       </div>
       <div class="preview-card-overlay">
         <div class="preview-card-edge">
-          <ButtonRound class="preview-card-button" variant="accent" renderAs="div">
+          <ButtonRound 
+            class="preview-card-button" 
+            :class="props.preview.isDark ? 'is-dark' : 'is-light'"
+            variant="accent" 
+            renderAs="div"
+          >
             <ArrowRightLong class="preview-card-button-arrow" />
           </ButtonRound>
         </div>
@@ -174,8 +179,46 @@ onUnmounted(() => {
   }
 
   &-button {
+    background: rgba(255, 140, 0, 0.5) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+
+    &.is-dark {
+      background: rgba(255, 120, 0, 0.4) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      .preview-card-button-arrow {
+        color: rgba(255, 255, 255, 0.95) !important;
+        --icon-color: rgba(255, 255, 255, 0.95) !important;
+      }
+    }
+
+    &.is-light {
+      background: rgba(255, 160, 0, 0.6) !important;
+      border-color: rgba(0, 0, 0, 0.05) !important;
+      .preview-card-button-arrow {
+        color: rgba(0, 0, 0, 0.8) !important;
+        --icon-color: rgba(0, 0, 0, 0.8) !important;
+      }
+    }
+
+    @include mixins.hover {
+      &:hover {
+        background: rgba(255, 140, 0, 0.7) !important;
+        transform: scale(1.1) !important;
+        box-shadow: 
+          0 8px 24px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+      }
+    }
+
     &-arrow {
-      transition: transform 0.1s ease-in-out;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       width: 100%;
       transform: rotate(calc(var(--hover) * -45deg));
     }
