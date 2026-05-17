@@ -1,7 +1,7 @@
 export const social = [
-  { url: "mailto:me@david-hckh.com", name: "mail" },
-  { url: "https://github.com/davidhckh", name: "github" },
-  { url: "https://www.linkedin.com/in/david-heckhoff/", name: "linkedin" },
-  { url: "https://x.com/DavidHckh", name: "x" },
-  //{ url: "https://www.instagram.com/davidhckh/", name: "instagram" },
+  { url: "mailto:saemscodes@gmail.com", name: "mail" },
+  { url: "https://github.com/saemscodes", name: "github" },
+  { url: "https://www.linkedin.com/in/samgatana/", name: "linkedin" },
+  { url: "https://x.com/civiceducationkenya", name: "x" },
+  { url: "https://www.instagram.com/civiceducationkenya/", name: "instagram" },
 ] as const satisfies { url: string; name: "mail" | "github" | "instagram" | "linkedin" | "x" }[];

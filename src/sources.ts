@@ -13,6 +13,7 @@ import iconSpritesheet from "./assets/textures/icon-spritesheet.webp";
 import matcapBlack from "./assets/textures/matcap-black.webp";
 import matcapGray from "./assets/textures/matcap-gray.webp";
 import matcapSkin from "./assets/textures/matcap-afro.webp";
+import matcapSkinAfrican from "./assets/textures/matcap-skin-african.png";
 import matcapWhite from "./assets/textures/matcap-white.webp";
 import numbersBitmap from "./assets/textures/numbers-bitmap.webp";
 import roomTexture from "./assets/textures/room.webp";
@@ -44,6 +45,7 @@ export const sources = [
   { name: "matcap-black", type: "texture", path: matcapBlack },
   { name: "matcap-gray", type: "texture", path: matcapGray },
   { name: "matcap-skin", type: "texture", path: matcapSkin },
+  { name: "matcap-skin-african", type: "texture", path: matcapSkinAfrican },
   { name: "matcap-white", type: "texture", path: matcapWhite },
   { name: "numbers-bitmap", type: "texture", path: numbersBitmap },
   { name: "room-texture", type: "texture", path: roomTexture },

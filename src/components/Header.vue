@@ -93,7 +93,7 @@ const getInTouchClassNames = computed(() => {
       data-hoversound="hover"
       data-cursor="circle-white"
     >
-      <Logo class="header-logo-image" />
+      <Logo class="header-logo-image" :isDarkTheme="isDarkTheme" />
     </div>
     <div class="header-right">
       <Button
@@ -192,6 +192,15 @@ const getInTouchClassNames = computed(() => {
 
     @include mixins.mq("md") {
       display: flex;
+      background-color: var(--color-orange-400, #ff6600) !important;
+      color: var(--color-black, #000) !important;
+
+      @include mixins.hover {
+        &:hover {
+          background-color: var(--color-black, #000) !important;
+          color: var(--color-orange-400, #ff6600) !important;
+        }
+      }
     }
   }
 

@@ -44,7 +44,7 @@ const { withSocial = true } = defineProps<Props>();
           <div class="footer-top-links-legal">
             <Clickable renderAs="div">
               <Link
-                :href="locale === 'de' ? '/de/privacy' : '/privacy'"
+                :href="locale === 'sw' ? '/sw/privacy' : '/privacy'"
                 class="footer-link"
                 :external="true"
                 data-cursor="circle-white"
@@ -55,7 +55,7 @@ const { withSocial = true } = defineProps<Props>();
             </Clickable>
             <Clickable renderAs="div">
               <Link
-                :href="locale === 'de' ? '/de/legal' : '/legal'"
+                :href="locale === 'sw' ? '/sw/legal' : '/legal'"
                 class="footer-link children-unclickable"
                 :external="true"
                 data-cursor="circle-white"
@@ -75,16 +75,16 @@ const { withSocial = true } = defineProps<Props>();
           </p>
           <Clickable renderAs="div">
             <Link
-              href="https://soundcloud.com/hmsurf"
+              href="https://www.youtube.com/shorts/CcC5vemVEjY"
               class="footer-link children-unclickable"
               external
               data-cursor="circle-white"
               data-hoversound="hover"
-              >HM Surf</Link
+              >Saem's Tunes</Link
             >
           </Clickable>
         </div>
-        <p>© {{ new Date().getFullYear() }} David Heckhoff</p>
+        <p>© {{ new Date().getFullYear() }} Sam Gatana</p>
       </div>
     </div>
   </footer>

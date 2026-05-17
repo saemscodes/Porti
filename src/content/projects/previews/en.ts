@@ -1,47 +1,33 @@
-import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
-//import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
+import thumbnailCeka from "../../../assets/thumbnails/ceka.webp";
+import thumbnailNod from "../../../assets/thumbnails/nod.webp";
+import thumbnailSaemstunes from "../../../assets/thumbnails/saemstunes.webp";
+import thumbnailNasaka from "../../../assets/thumbnails/nasaka.png";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "StreakOn",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "Social habit tracking app",
+    title: "CEKA",
+    slug: "ceka",
+    thumbnail: thumbnailCeka,
+    description: "Open-source civic technology platform",
   },
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "Number Our Days",
+    slug: "nod",
+    thumbnail: thumbnailNod,
+    description: "Faith-centred Christian companion app",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
+    title: "Saem's Tunes",
+    slug: "saemstunes",
+    thumbnail: thumbnailSaemstunes,
+    description: "Music school & education platform",
   },
   {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
-  },
-  /**  {
-    title: "WebGL Particles",
-    slug: "particles",
-    thumbnail: thumbnailParticles,
-    description: "Dynamic 3D particles",
-  }, */
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
+    title: "Nasaka IEBC",
+    slug: "nasaka",
+    thumbnail: thumbnailNasaka,
+    description: "Independent IEBC office finder platform",
   },
 ] as const satisfies ProjectPreview[];

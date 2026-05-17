@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="sw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sera ya Faragha - Sam Gatana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      color: #091434;
+    }
+
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+
+    #contet-container {
+      width: 1400px;
+      max-width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #rotating-logo-container {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 60px;
+        height: 60px;
+    }
+
+    #rotating-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .logo-fade {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    #text-container {
+      margin-top: 60px;
+    }
+  </style>
+
+  <body>
+    <div id="contet-container">
+    <div id="rotating-logo-container">
+        <img id="rotating-logo" src="/logos/ceka.png" alt="Project Logo" width="60" height="60">
+    </div>
+
+      <div id="text-container">
+        <h1>Sera ya Faragha</h1>
+        <p>Sasisho la mwisho: Oktoba 13, 2025</p>
+        <p>
+          Sera hii ya Faragha inaelezea sera na taratibu zetu kuhusu ukusanyaji, matumizi na utoaji wa habari zako unapotumia Huduma na inakuambia kuhusu haki zako za faragha na jinsi sheria inavyokulinda.
+        </p>
+
+        <h1>Tafsiri na Ufafanuzi</h1>
+        <h2>Ufafanuzi</h2>
+        <p>Kwa madhumuni ya Sera hii ya Faragha:</p>
+        <ul>
+          <li><strong>Kampuni</strong> inarejelea Sam Gatana nchini Kenya.</li>
+          <li><strong>Vifaa</strong> inamaanisha kifaa chochote kinachoweza kufikia Huduma kama vile kompyuta, simu au tableti.</li>
+          <li><strong>Data ya Kibinafsi</strong> ni habari yoyote inayohusiana na mtu aliyetambuliwa au anayeweza kutambulika.</li>
+          <li><strong>Huduma</strong> inarejelea Tovuti.</li>
+          <li><strong>Wewe</strong> inamaanisha mtu anayefikia au kutumia Huduma.</li>
+        </ul>
+
+        <h1>Kusanya na Kutumia Data Yako ya Kibinafsi</h1>
+        <h2>Aina za Data Zinazokusanywa</h2>
+        <p>Tunapokusanya data, ni kwa ajili ya kuboresha huduma yetu kwako. Data inayokusanywa inaweza kujumuisha:</p>
+        <ul>
+          <li>Anwani ya barua pepe</li>
+          <li>Majina</li>
+          <li>Data ya Matumizi (IP address, aina ya kivinjari, n.k.)</li>
+        </ul>
+
+        <h2>Matumizi ya Data Yako ya Kibinafsi</h2>
+        <p>Kampuni inaweza kutumia Data ya Kibinafsi kwa madhumuni yafuatayo:</p>
+        <ul>
+          <li>Kutoa na kudumisha Huduma yetu.</li>
+          <li>Kudhibiti Akaunti yako.</li>
+          <li>Kuwasiliana na wewe kupitia barua pepe au maingiliano mengine ya kielektroniki.</li>
+        </ul>
+
+        <h2>Uhifadhi wa Data Yako ya Kibinafsi</h2>
+        <p>Kampuni itahifadhi Data yako ya Kibinafsi kwa muda mrefu tu kama ni muhimu kwa madhumuni yaliyowekwa katika Sera hii ya Faragha.</p>
+
+        <h2>Usalama wa Data Yako ya Kibinafsi</h2>
+        <p>Usalama wa Data yako ya Kibinafsi ni muhimu kwetu, lakini kumbuka kuwa hakuna njia ya usambazaji kwenye Mtandao, au njia ya uhifadhi wa kielektroniki ambayo ni salama 100%.</p>
+
+        <h1>Sheria Inayotumika</h1>
+        <p>Sera hii ya Faragha na madai yoyote yanayohusiana nayo yataongozwa na sheria za Kenya.</p>
+
+        <h1>Wasiliana Nasi</h1>
+        <p>Ikiwa una maswali yoyote kuhusu Sera hii ya Faragha, unaweza kuwasiliana nasi:</p>
+        <ul>
+          <li>Kwa barua pepe: saemscodes@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+      <script>
+        const logos = ['/logos/ceka.png', '/logos/nod.png', '/logos/saemstunes.png'];
+        let currentIndex = 0;
+        const logoImg = document.getElementById('rotating-logo');
+        setInterval(() => {
+            logoImg.classList.add('logo-fade');
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % logos.length;
+                logoImg.src = logos[currentIndex];
+                logoImg.classList.remove('logo-fade');
+            }, 400);
+        }, 3500);
+    </script>
+</body>
+</html>
