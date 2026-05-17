@@ -21,7 +21,10 @@ export const useHowler = () => {
   const { isTouch } = useAgent();
   const enabledVolume = ref<number>(0);
 
+  const handleUnlocked = () => {
     howlerUnlocked.value = true;
+
+    // Removed isTouch block to allow sounds on touch-enabled devices
 
     const storeItem = localStorage.getItem("portfolio-soundsEnabled");
     if (storeItem) {
@@ -37,7 +40,7 @@ export const useHowler = () => {
       if (Howler.ctx.state !== "running") return;
       handleUnlocked();
     } else {
-      // Process sounds
+      // Only process sounds on non-touch devices
       contactTick();
       roomTick();
 

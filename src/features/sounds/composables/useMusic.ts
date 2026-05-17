@@ -42,7 +42,7 @@ export const useMusic = () => {
 
   watchEffect(() => {
     if (!isFeatureEnabled("sounds")) return;
-    if (!howlerUnlocked.value || !soundsEnabled.value || isTouch.value) return;
+    if (!howlerUnlocked.value || !soundsEnabled.value) return;
 
     play("luci");
     play("about");
